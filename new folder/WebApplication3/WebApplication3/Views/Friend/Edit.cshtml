@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Edit a friend";
+}
+<style>
+    table, th, td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+
+    #abc {
+        text-decoration: none;
+        padding:10px;
+        width:70px;
+        margin-left: 100px;
+        margin-top: 10px;
+        text-align: center;
+    }
+</style>
+
+@model WebApplication3.Models.Friend
+
+<h2>Edit a friend </h2>
+    <form action="/Friend/EditOK/@Model.FriendID" method="post" style="border:3px solid black; width:30%;padding:30px">
+
+        FriendID :
+        <input type="text" name="fid" value="@Model.Fid" />
+
+        <hr />
+        Name :
+        <input type="text" name="name" value="@Model.FriendName" />
+
+        <hr />
+
+        Place :
+        <input type="text" name="place" value="@Model.Place" />
+        <br />
+
+        <input id="abc" type="submit" value="Edit" />
+        
+    </form>
+    <a href="/Friend/Index"> Go back</a>
+        

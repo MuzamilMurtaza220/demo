@@ -1,0 +1,17 @@
+﻿@model WebApplication3.Models.Friend
+@{
+    ViewBag.Title = "Valid";
+}
+
+<h2>Valid</h2>
+@{Html.BeginForm("Valid", "Friend", FormMethod.Post);}
+
+@Html.LabelFor(m => m.FriendName)
+@Html.Editor("Name")
+@Html.ValidationMessageFor(m => m.FriendName)
+@Html.LabelFor(m => m.Place)
+@Html.Editor("Place")
+
+<input type="submit" value="Valid" />
+
+@{Html.EndForm();}

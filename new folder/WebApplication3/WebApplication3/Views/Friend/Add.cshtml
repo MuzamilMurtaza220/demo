@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Add a friend";
+}
+<style>
+    #abc {
+        text-decoration: none;
+        
+        margin-left: 200px;
+        margin-top: 10px;
+        text-align: center;
+
+
+</style>
+@model WebApplication3.Models.Friend
+<h2>Add a  Friend</h2>
+
+@using (Html.BeginForm("Index", "Friend"))
+{
+    <table cellpadding="2" cellspacing="2" style=" width:50%">
+        <tr>
+            <td>FriendID</td>
+
+            <td>@Html.TextBoxFor(model => model.Fid)</td>
+            <td>@Html.ValidationMessageFor(model => model.Fid)</td>
+        </tr>
+        <tr>
+            <td>FriendName</td>
+            <td>@Html.TextBoxFor(model => model.FriendName)</td>
+            <td>@Html.ValidationMessageFor(model => model.FriendName)</td>
+        </tr>
+        <tr>
+            <td>Place</td>
+            <td>@Html.TextBoxFor(model => model.Place)</td>
+            <td>@Html.ValidationMessageFor(model => model.Place)</td>
+        </tr>
+
+
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Add Friend" /></td>
+            
+        </tr>
+    </table>
+   <a href="/Friend/Index"> Go back</a>
+}
+
+
+
+
+
+
+    @*<form action="/Friend/Insert" method="get">
+        FriendID :
+        <input type="text" name="id" value="" />
+        <br />
+         Name :
+        <input type="text" name="name" value="" />
+        <br />
+
+        Place :
+        <input type="text" name="place" value="" />
+        <br />
+
+        <input type="submit" value="Add" />
+    </form>*@

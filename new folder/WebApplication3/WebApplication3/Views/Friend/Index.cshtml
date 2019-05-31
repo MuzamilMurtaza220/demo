@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<style>
+    table, th, td {
+        border: 1px solid black;
+        padding: 10px;text-align:center;
+        
+        
+    }
+    #abc {
+        color: white;
+        background-color: grey;
+        text-decoration: none;
+        padding: 15px 25px;
+        text-align: center;
+    }
+</style>
+@*Model WebApplication3.Models.Friend*@
+@*<h2>Enter Friend</h2>
+<form action="/Friend/Add" method="get">
+    Name :
+    <input type="text" name="name" value="" />
+    <br />
+
+    Place :
+    <input type="text" name="place" value="" />
+    <br />
+
+    <input type="submit" value="Add" />
+</form>*@
+
+<h2>List of Friends</h2>
+<br />
+<table style="border:3px solid black; width:50%">
+    <tr>
+        <td><b>ID</b></td>
+        <td><b>Name</b></td>
+        <td><b>Place</b></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.Fid</td>
+            <td>@s.FriendName</td>
+            <td>@s.Place</td>
+
+            <td>                
+              
+                <a href="/Friend/Edit/@s.FriendID">Edit</a>
+                
+            </td>
+            <td><a href="/Friend/Delete/@s.Fid">Delete</a></td>
+        </tr>
+    }
+</table>
+<br/>
+<br />
+<br />
+ <a id="abc" href="/Friend/Add">Add a Friend</a>

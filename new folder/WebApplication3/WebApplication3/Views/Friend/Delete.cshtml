@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Delete a friend";
+}
+@model WebApplication3.Models.Friend
+
+<h2>Delete a friend</h2>
+<form action="/Friend/DeleteOK/@Model.Fid" method="post">
+    FriendID :
+    <input disabled="disabled" type="text" name="name" value="@Model.Fid" />
+
+    <hr />
+     Name :
+    <input disabled="disabled" type="text" name="name" value="@Model.FriendName" />
+   
+    <hr />
+
+    Place :
+    <input disabled="disabled" type="text" name="place" value="@Model.Place" />
+    <br />
+
+    <input type="submit" value="Delete" />
+</form>
+<a href="/Friend/Index"> Go back</a>
